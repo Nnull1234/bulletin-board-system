@@ -1,25 +1,17 @@
-import logo from "./logo.svg";
+import React from "react";
+import FetchGet from "./FetchGet";
+import FetchPost from "./FetchPost";
 import "./App.css";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          テストだおｙ テスト２
-        </a>
-      </header>
+    <div>
+      <header id="header">掲示板</header>
+      <h1>新着スレッド</h1>
+      <FetchPost />
+      <FetchGet />
     </div>
   );
-}
+};
 
 export default App;

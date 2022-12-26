@@ -2,12 +2,15 @@ import React from "react";
 
 const FetchPost = () => {
   const Click = () => {
-    const body = document.getElementById("form");
+    // const body = document.getElementById("form");
+    // console.log(body);
     fetch(
-      "https://virtserver.swaggerhub.com/INFO_3/BulletinBoardApplication/1.0.0/threads",
+      "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads",
       {
         method: "POST",
-        body: body,
+        body: {
+          title: "あいおうえ",
+        },
       }
     )
       .then((response) => {

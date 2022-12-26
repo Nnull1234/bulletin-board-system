@@ -5,7 +5,7 @@ const FetchGet = () => {
 
   useEffect(() => {
     fetch(
-      "https://virtserver.swaggerhub.com/INFO_3/BulletinBoardApplication/1.0.0/threads?offset=0",
+      "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads?offset=0",
       { method: "GET" }
     )
       .then((response) => {

@@ -23,7 +23,7 @@ const FetchPost = () => {
 
   const A = () => {
     fetch(
-      "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/0/posts",
+      "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/1/posts",
       {
         method: "POST",
         body: JSON.stringify({

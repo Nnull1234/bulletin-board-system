@@ -7,15 +7,16 @@ const FetchGet = () => {
   const getThreadListData = () => {
     fetch(
       "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/0/posts?offset=0",
-      { method: "GET" })
+      { method: "GET" }
+    )
       .then((res) => {
-        return res.json()
+        return res.json();
       })
       .then((data) => {
-        console.log(data);
         setThreadContents(data);
+        console.log(threadContents);
       });
-  }
+  };
 
   useEffect(() => {
     fetch(
@@ -23,14 +24,13 @@ const FetchGet = () => {
       { method: "GET" }
     )
       .then((response) => {
-        return response.json()
+        return response.json();
       })
       .then((data) => {
         // console.log(data);
-        setPosts(data)
-      })
-
-  }, [])
+        setPosts(data);
+      });
+  }, []);
 
   return (
     <>
@@ -44,11 +44,6 @@ const FetchGet = () => {
         </ul>
       </div>
       <button onClick={getThreadListData}>Thread</button>
-      <div>
-        {
-          console.log(threadContents.threadId)
-        }
-      </div>
     </>
   );
 };

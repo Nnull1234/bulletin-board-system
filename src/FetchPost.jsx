@@ -9,7 +9,7 @@ const FetchPost = () => {
       {
         method: "POST",
         body: JSON.stringify({
-          title: inputData
+          title: inputData,
         }),
       }
     )
@@ -23,11 +23,11 @@ const FetchPost = () => {
 
   const A = () => {
     fetch(
-      "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/1/posts",
+      "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/0/posts",
       {
         method: "POST",
         body: JSON.stringify({
-          post: "これはtest"
+          post: "これはtest",
         }),
       }
     )
@@ -37,13 +37,13 @@ const FetchPost = () => {
       .then((data) => {
         console.log(data);
       });
-  }
+  };
 
   return (
     <div>
       <input type="text" id="form"></input>
       <button onClick={Click}>スレッド作成</button>
-      <button onClick={A} >投稿</button>
+      <button onClick={A}>投稿</button>
     </div>
   );
 };

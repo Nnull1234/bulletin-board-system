@@ -3,10 +3,11 @@ import React, { useState, useEffect } from "react";
 const FetchGet = () => {
   const [posts, setPosts] = useState([]);
   const [threadContents, setThreadContents] = useState({});
+  let element = "";
 
-  const getThreadListData = () => {
+  const getThreadListData = (num) => {
     fetch(
-      "https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/0/posts?offset=0",
+      `https://2y6i6tqn41.execute-api.ap-northeast-1.amazonaws.com/threads/${posts[0].id}/posts?offset=0`,
       { method: "GET" }
     )
       .then((res) => {
@@ -15,6 +16,8 @@ const FetchGet = () => {
       .then((data) => {
         setThreadContents(data);
         console.log(threadContents);
+
+        element = React.createElement('h1', null, 'Hello world!')
       });
   };
 
@@ -42,8 +45,12 @@ const FetchGet = () => {
             </div>
           ))}
         </ul>
-      </div>
+      </div >
       <button onClick={getThreadListData}>Thread</button>
+
+      <div>
+        {element}
+      </div >
     </>
   );
 };
